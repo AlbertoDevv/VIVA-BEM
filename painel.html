@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Registre e acompanhe suas ações de autocuidado no VivaBem.">
+  <title>Meu painel | VivaBem</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg container" aria-label="Navegação principal">
+      <a class="navbar-brand brand" href="index.html"><span class="brand-mark">V</span> VivaBem</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="orientacoes.html">Orientações</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="painel.html">Meu painel</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container section-block dashboard">
+    <div class="section-heading">
+      <span class="eyebrow">SEU ESPAÇO DE AUTOCUIDADO</span>
+      <h1>Meu painel</h1>
+      <p>Registre ações que fazem sentido para sua rotina. Os registros são demonstrativos e ficam salvos neste navegador.</p>
+    </div>
+
+    <section class="stats-grid" aria-label="Resumo dos registros">
+      <article class="stat-card"><span>Total de registros</span><strong id="totalRegistros">0</strong></article>
+      <article class="stat-card"><span>Concluídos</span><strong id="totalConcluidos">0</strong></article>
+      <article class="stat-card"><span>Em andamento</span><strong id="totalAndamento">0</strong></article>
+    </section>
+
+    <div class="dashboard-grid">
+      <section class="panel-card" id="formulario">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">NOVO REGISTRO</span>
+            <h2 id="tituloFormulario">Adicionar ação</h2>
+          </div>
+          <span class="form-mark">＋</span>
+        </div>
+        <form id="formAcao" novalidate>
+          <input type="hidden" id="acaoId">
+          <div class="mb-3">
+            <label for="nomeAcao" class="form-label">Nome da ação</label>
+            <input type="text" class="form-control" id="nomeAcao" name="nomeAcao" minlength="3" maxlength="60" required placeholder="Ex.: Fazer uma caminhada">
+            <div class="invalid-feedback">Informe uma ação entre 3 e 60 caracteres.</div>
+          </div>
+          <div class="mb-3">
+            <label for="categoriaAcao" class="form-label">Categoria</label>
+            <select class="form-select" id="categoriaAcao" name="categoriaAcao" required>
+              <option value="">Selecione uma categoria</option>
+              <option value="Hidratação">Hidratação</option>
+              <option value="Atividade física">Atividade física</option>
+              <option value="Sono e descanso">Sono e descanso</option>
+              <option value="Alimentação">Alimentação</option>
+              <option value="Prevenção">Prevenção</option>
+              <option value="Outro">Outro</option>
+            </select>
+            <div class="invalid-feedback">Selecione uma categoria.</div>
+          </div>
+          <div class="mb-3">
+            <label for="dataAcao" class="form-label">Data</label>
+            <input type="date" class="form-control" id="dataAcao" name="dataAcao" required>
+            <div class="invalid-feedback">Informe uma data válida.</div>
+          </div>
+          <div class="mb-3">
+            <label for="statusAcao" class="form-label">Status</label>
+            <select class="form-select" id="statusAcao" name="statusAcao" required>
+              <option value="Em andamento">Em andamento</option>
+              <option value="Concluída">Concluída</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="observacaoAcao" class="form-label">Observação <span class="optional">(opcional)</span></label>
+            <textarea class="form-control" id="observacaoAcao" name="observacaoAcao" rows="3" maxlength="160" placeholder="Uma anotação curta, sem dados pessoais ou informações médicas."></textarea>
+            <div class="form-hint">Máximo de 160 caracteres.</div>
+          </div>
+          <p class="privacy-note"><strong>Privacidade:</strong> não informe CPF, endereço, diagnósticos ou outros dados pessoais. Este protótipo utiliza dados de demonstração armazenados no navegador.</p>
+          <div id="mensagemFormulario" class="form-message" role="status" aria-live="polite"></div>
+          <div class="d-flex flex-wrap gap-2">
+            <button type="submit" class="btn btn-primary-custom" id="botaoSalvar">Salvar registro</button>
+            <button type="button" class="btn btn-outline-custom d-none" id="botaoCancelar">Cancelar edição</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="right-column">
+        <section class="panel-card">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">ACOMPANHAMENTO</span>
+              <h2>Minhas ações</h2>
+            </div>
+          </div>
+          <div id="listaAcoes" class="activity-list" aria-live="polite">
+            <p class="empty-state">Nenhuma ação registrada ainda. Use o formulário para começar.</p>
+          </div>
+        </section>
+
+        <section class="panel-card">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">HISTÓRICO</span>
+              <h2>Atividades recentes</h2>
+            </div>
+          </div>
+          <ol id="historicoAtividades" class="log-list">
+            <li class="empty-state">As operações realizadas aparecerão aqui.</li>
+          </ol>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">V</span> VivaBem</a>
+      <p>Projeto acadêmico de tecnologia cidadã. Conteúdo educativo, não substitui orientação profissional.</p>
+      <span>© 2026 VivaBem</span>
+    </div>
+  </footer>
+</body>
+</html>
