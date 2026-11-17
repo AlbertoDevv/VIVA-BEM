@@ -22,9 +22,13 @@ O formulário cria registros com os campos: id, nome, categoria, data, status e 
 
 ## 4. Validação e limitações
 
-**Testes responsivos:** [registrar resultados em 375 px, 768 px e 1366 px].
+**Testes responsivos:** o site foi verificado nas resoluções de 375 px (celular), 768 px (tablet) e 1366 px (computador), apresentando funcionamento adequado nas três.
 
-**Entradas inválidas testadas:** [registrar tentativas e resultados].
+**Testes funcionais:**
+- Adicionar registro: aprovado.
+- Editar registro: aprovado.
+- Remover registro: aprovado.
+- Atualizar a página e verificar a persistência dos registros: aprovado.
 
 **Limitações:** protótipo sem servidor, sem autenticação, sem atendimento profissional, sem sincronização entre dispositivos e sem garantia de segurança para dados sensíveis. O conteúdo é educativo e deve ser revisado com fontes confiáveis.
 
@@ -34,4 +38,4 @@ A proposta poderá ser mantida por parcerias institucionais com organizações d
 
 ## 6. Declaração de uso de IA e terceiros
 
-Utilizei ChatGPT (OpenAI) para apoiar o planejamento, a criação da estrutura inicial, a programação e a revisão do protótipo a base do site, em sequencia revisei adaptei e fiz mudanças principalmente na parte estetica,  alguns codigos ja prontos do Bootstrap 5.3.3 utilizado por CDN oficial.
+Utilizei ChatGPT (OpenAI) para apoiar o planejamento, a criação da estrutura inicial, a programação e a revisão do protótipo a base do site, em sequencia revisei adaptei e fiz mudanças principalmente na parte estetica,  alguns codigos ja prontos do Bootstrap 5.3.3 utilizado por CDN oficial e uma parte do projeto integrador.
