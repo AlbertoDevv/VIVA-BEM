@@ -10,7 +10,7 @@ O VivaBem é um protótipo acadêmico de tecnologia cidadã voltado à saúde pr
 
 O projeto parte da dificuldade que algumas pessoas encontram para organizar hábitos preventivos e localizar informações básicas e confiáveis sobre autocuidado. O público inicial são cidadãos que desejam acompanhar pequenas ações de bem-estar no cotidiano.
 
-**Atenção:** a evidência pública ou observação que fundamentará o problema ainda deve ser pesquisada e incluída pelo estudante no relatório. Não apresentar esta descrição como resultado de entrevista.
+A evidência que fundamenta o problema será apresentada no relatório, com indicação da fonte pública ou observação efetivamente realizada. Esta descrição não representa resultado de entrevista.
 
 ## Objetivos de Desenvolvimento Sustentável
 
@@ -38,7 +38,7 @@ O projeto parte da dificuldade que algumas pessoas encontram para organizar háb
 ## Como executar
 
 1. Baixe ou clone o repositório.
-2. Abra a pasta `VivaBem` no Visual Studio Code.
+2. Abra a pasta do projeto no Visual Studio Code.
 3. Execute `index.html` com a extensão Live Server (recomendado).
 4. Navegue pelo menu e acesse **Meu painel** para testar o formulário.
 
@@ -47,7 +47,7 @@ O projeto parte da dificuldade que algumas pessoas encontram para organizar háb
 ## Estrutura de pastas
 
 ```text
-VivaBem/
+VIVA-BEM/
 ├── index.html
 ├── orientacoes.html
 ├── painel.html
@@ -55,8 +55,8 @@ VivaBem/
 │   └── style.css
 ├── js/
 │   └── script.js
-├── img/
-└── README.md
+├── README.md
+└── RELATORIO_BASE.md
 ```
 
 ## Modelo de dados
@@ -80,24 +80,13 @@ O formulário orienta o usuário a não inserir dados pessoais ou informações 
 
 A versão acadêmica deve ser testada com dados fictícios. O armazenamento local não é indicado para informações sensíveis nem oferece sincronização entre dispositivos.
 
-## Testes a realizar antes da entrega
+## Testes realizados
+
+Os resultados dos testes devem ser preenchidos após a conferência final:
 
 - [ ] Celular: largura aproximada de 375 px.
 - [ ] Tablet: largura aproximada de 768 px.
 - [ ] Desktop: largura aproximada de 1366 px.
-- [ ] Tentar enviar o formulário vazio.
-- [ ] Testar nome com menos de 3 caracteres.
-- [ ] Testar observação acima de 160 caracteres.
-- [ ] Adicionar, editar e excluir um registro.
-- [ ] Atualizar a página e conferir a persistência local.
-- [ ] Conferir se os links entre as três páginas funcionam.
-
-## Relatório
-
-O relatório final deve documentar evidência do problema, ODS, arquitetura, modelo de dados, três ameaças e mitigações, testes, limitações, sustentabilidade do negócio de impacto e declaração de uso de IA.
-
-## Uso de inteligência artificial e terceiros
-
-A estrutura inicial e trechos de código deste protótipo foram elaborados com auxílio do ChatGPT (OpenAI), utilizado para planejamento, geração de uma base inicial e apoio à programação. O estudante deve revisar, adaptar, testar e compreender o código antes da entrega.
-
-O Bootstrap é utilizado pela CDN oficial do projeto Bootstrap. Outras fontes, imagens ou trechos de terceiros adicionados posteriormente devem ser citados.
+- [ ] Envio do formulário vazio.
+- [ ] Nome com menos de 3 caracteres.
+- [ ] Observ
